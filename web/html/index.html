@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>welcom</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/test.js"></script>
+    <script type="text/javascript">
+        function download() {
+            $.ajax({
+                type:"GET",
+                url:"filedownload",
+                data:{name:"liupei"},
+                success:function (ret) {
+                    console.log("调用ajax成功！")
+                },
+                error:function (ret) {
+                    console.log("调用ajax失败！")
+                }
+            })
+        }
+    </script>
+    <style>
+        body {
+            background-image:url("/image/wallhaven-674407.jpg");
+            background-size: 100%;
+        }
+        div.login{
+            margin:100px;
+            background-color: crimson;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+        div.content {
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<!--这个是注释-->
+<div class="login" style="float-displace: auto">
+    <div class="content">
+    <h3>Login</h3>
+    <form method="post">
+        <input type="text" name="username" placeholder="用户名" required="required">
+        <input type="password" name="password" placeholder="密码" required="required">
+        <button type="submit">登录</button>
+    </form>
+    <button id="test"></button>
+    <a href="/filedownload"><button>下载</button></a>
+    <input type="file" placeholder="下载"/>
+    </div>
+</div>
+</body>
+</html>
